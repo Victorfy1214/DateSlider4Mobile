@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>date progress</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/mobile-slider.css"/>
+    <link rel="stylesheet" href="css/map.css"/>
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+<!--地图DIV-->
+<div id = "mapDiv"></div>
+
+<div class = "Time-Slider">
+    <div id="mobile-timecode" data-title="D_LT2"></div>
+    <div class = "triangle-down" ></div>
+    <div id = "mobile-progress-bar">
+
+        <div class = "mobile-icon-play">
+            <i class="fa fa-play"></i>
+        </div>
+        <div class = "mobile-icon-pause">
+            <i class="fa fa-pause"></i>
+        </div>
+
+        <div id = "mobile-time-box"></div>
+    </div>
+</div>
+
+<script src="leaflet/leaflet.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/mobile-slider.js"></script>
+<script>
+    const d0 = '2016/08/13 00:00';
+    const d1 = '2016/08/23 00:00';
+    let mSlider = new TimeSlider(d0,d1);
+    mSlider.Init();
+    mSlider.setOnChangedListener(function (value) {
+        console.log(value);
+    });
+
+</script>
+</body>
+</html>
